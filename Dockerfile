@@ -6,7 +6,7 @@ RUN apt-get update && \
 
 # 调试：查找 libclang.so 的实际路径
 #RUN find /usr/lib -name "libclang.so"
-RUN find /usr/lib -name "libclang.so" || echo "❌ libclang.so not found"
+RUN echo "🔍 检查 libclang.so 是否存在：" && ls -l /usr/lib/llvm-*/lib/libclang.so*
 
 
 # 设置 libclang 路径（根据上一步输出结果修改）
