@@ -5,7 +5,8 @@ RUN apt-get update && \
     apt-get install -y clang libclang-dev build-essential pkg-config cmake
 
 # 调试：查找 libclang.so 的实际路径
-RUN find /usr/lib -name "libclang.so"
+#RUN find /usr/lib -name "libclang.so"
+RUN echo "🔍 Searching for libclang.so..." && find /usr/lib -name "libclang.so"
 
 # 设置 libclang 路径（根据上一步输出结果修改）
 ENV LIBCLANG_PATH=/usr/lib/llvm-14/lib
